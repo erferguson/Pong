@@ -1,6 +1,7 @@
 # Simple Pong in Python3
 
 import turtle  # built-in Python, starter for Games, good for Beginners
+import os
 
 wn = turtle.Screen()
 wn.title('Pong by Eric Ferguson')
@@ -96,10 +97,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1 # reverses the direction of the Ball
+        os.system('afplay bounce.wav&') # plays Bounce.wave sound
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1 # reverses the direction of the Ball
+        os.system('afplay bounce.wav&') # plays Bounce.wave sound
 
     # X coordinate
     if ball.xcor() > 390:
@@ -122,7 +125,9 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < b_paddle.ycor() + 40 and ball.ycor() > b_paddle.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
+        os.system('afplay bounce.wav&') # plays Bounce.wave sound
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < a_paddle.ycor() + 40 and ball.ycor() > a_paddle.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
+        os.system('afplay bounce.wav&') # plays Bounce.wave sound
