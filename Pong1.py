@@ -50,7 +50,6 @@ pen.hideturtle()
 pen.goto(0, 260)
 pen.write('Player 1: 0  Player 2: 0', align='center', font=('Courier', 24, 'normal'))
 
-
 # Function > A_Paddle UP
 def a_paddle_up():
     y = a_paddle.ycor() # returns y coordinate, assign to y
@@ -83,7 +82,6 @@ wn.onkeypress(a_paddle_down, 'd')
 wn.onkeypress(b_paddle_up, 'Up')
 wn.onkeypress(b_paddle_down, 'Down')
 
-
 # Main Game Loop
 while True: 
     wn.update()
@@ -112,14 +110,12 @@ while True:
         pen.clear()
         pen.write(f'Player 1: {a_score}  Player 2: {b_score}', align='center', font=('Courier', 24, 'normal'))
 
-
     if ball.xcor() < -390:
         ball.goto(0,0)
         ball.dx *= -1
         b_score += 1
         pen.clear()
         pen.write(f'Player 1: {a_score}  Player 2: {b_score}', align='center', font=('Courier', 24, 'normal'))
-
 
     # Paddle and Ball collisions
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < b_paddle.ycor() + 40 and ball.ycor() > b_paddle.ycor() - 40):
