@@ -8,7 +8,9 @@ wn.bgcolor('black')
 wn.setup(width=800, height=600)
 wn.tracer(0) # stops the window from Updating, means a Manual Update now
 
-
+# Score
+a_score = 0
+b_score = 0
 
 # Paddle A > on LEFT
 a_paddle = turtle.Turtle()
@@ -103,10 +105,18 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0,0)
         ball.dx *= -1
+        a_score += 1
+        pen.clear()
+        pen.write(f'Player 1: {a_score}  Player 2: {b_score}', align='center', font=('Courier', 24, 'normal'))
+
 
     if ball.xcor() < -390:
         ball.goto(0,0)
         ball.dx *= -1
+        b_score += 1
+        pen.clear()
+        pen.write(f'Player 1: {a_score}  Player 2: {b_score}', align='center', font=('Courier', 24, 'normal'))
+
 
     # Paddle and Ball collisions
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < b_paddle.ycor() + 40 and ball.ycor() > b_paddle.ycor() - 40):
