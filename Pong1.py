@@ -33,6 +33,8 @@ ball.shape('circle')
 ball.color('green')
 ball.penup()
 ball.goto(0, 0) # set starting position of ball
+ball.dx = 2 #delta ?
+ball.dy = 2 # everytime ball moves it moves 2 pixles
 
 # Function > A_Paddle UP
 def a_paddle_up():
@@ -70,3 +72,7 @@ wn.onkeypress(b_paddle_down, 'Down')
 # Main Game Loop
 while True: 
     wn.update()
+
+    # Move the Ball
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
