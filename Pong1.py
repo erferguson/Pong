@@ -78,6 +78,7 @@ while True:
     ball.sety(ball.ycor() + ball.dy)
 
     # Border checking
+    # Y coordinate
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1 # reverses the direction of the Ball
@@ -85,3 +86,12 @@ while True:
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1 # reverses the direction of the Ball
+
+    # X coordinate
+    if ball.xcor() > 390:
+        ball.goto(0,0)
+        ball.dx *= -1
+
+    if ball.xcor() < -390:
+        ball.goto(0,0)
+        ball.dx *= -1
