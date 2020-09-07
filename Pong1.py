@@ -34,22 +34,37 @@ ball.color('green')
 ball.penup()
 ball.goto(0, 0) # set starting position of ball
 
-# Function > move A_Paddle UP
+# Function > A_Paddle UP
 def a_paddle_up():
     y = a_paddle.ycor() # returns y coordinate, assign to y
     y += 20 # adds Pixels to Y coordinate
     a_paddle.sety(y)
 
-# Function > move A_Paddle DOWN
+# Function > A_Paddle DOWN
 def a_paddle_down():
     y = a_paddle.ycor() # returns y coordinate, assign to y
     y -= 20 # adds Pixels to Y coordinate
     a_paddle.sety(y)
 
+    # Function > B_Paddle UP
+def b_paddle_up():
+    y = b_paddle.ycor() # returns y coordinate, assign to y
+    y += 20 # adds Pixels to Y coordinate
+    b_paddle.sety(y)
+
+# Function > B_Paddle DOWN
+def b_paddle_down():
+    y = b_paddle.ycor() # returns y coordinate, assign to y
+    y -= 20 # adds Pixels to Y coordinate
+    b_paddle.sety(y)
+
 # Keyboard binding ?
 wn.listen()
 wn.onkeypress(a_paddle_up, 'e')
-wn.onkeypress(a_paddle_down, 'f')
+wn.onkeypress(a_paddle_down, 'd')
+
+wn.onkeypress(b_paddle_up, 'Up')
+wn.onkeypress(b_paddle_down, 'Down')
 
 
 # Main Game Loop
