@@ -34,7 +34,7 @@ ball.color('green')
 ball.penup()
 ball.goto(0, 0) # set starting position of ball
 ball.dx = 2 #delta ?
-ball.dy = 2 # everytime ball moves it moves 2 pixles
+ball.dy = -2 # everytime ball moves it moves 2 pixles
 
 # Function > A_Paddle UP
 def a_paddle_up():
@@ -76,3 +76,12 @@ while True:
     # Move the Ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    # Border checking
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1 # reverses the direction of the Ball
+
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1 # reverses the direction of the Ball
